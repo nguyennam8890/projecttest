@@ -1,0 +1,79 @@
+//Khởi tạo một thư mục
+    $ git init git_example
+//
+cd tenthumuccanchuanbicommit
+//
+    $ git add readme.txt
+//
+
+    $ git status
+//Commit
+    $ git commit -m "First Commit"
+//push lên github
+    $ git push origin master
+//Lấy thông tin lần commit trước
+    $ git log -p
+    --since, --after: Xem các lần commit kể từ ngày nhất định.
+    --until: Xem các lần commit trước từ ngày nhất định.
+    --author: Xem các lần commit của một người nào đó.
+    --grep: Lọc các chuỗi trong log và in ra.
+//Lọc với $ git log --pretty="%tag"
+$ git log --pretty="%tag"
+    %H –  Commit hash
+    %h – Abbreviated commit hash
+    %T – Tree hash
+    %t – Abbreviated tree hash
+    %P – Parent hashes
+    %p – Abbreviated parent hashes
+    %an – Author name
+    %ae – Author e-mail
+    %ad – Author date (format respects the –date=option)
+    %ar – Author date, relative
+    %cn – Committer name
+    %ce – Committer email
+    %cd – Committer date
+    %cr – Committer date, relative
+    %s – Subject
+//Bỏ tập tin ra khỏi Staging Area
+git reset HEAD tên_file
+//Tags
+ - Lightweight Tag: Các tag này chỉ đơn thuần là đánh dấu snapshot của commit.
+    $ git tag v1.0
+ - Annotated Tag: Với tag này, bạn có thể đặt tiêu đề cho tag, và khi xem nó sẽ có thông tin về người tag, ngày tag,….
+    $ git tag -a v1.0-an -m "Ra mat phien ban 1.0"
+    $ git show v1.0-an
+//Thêm tag cho commit cũ
+    //Lấy mã checksum
+    $ git log --pretty=oneline -->a0dd8cc1f1460c7da603b25d3e3399eedb35e1fb
+    //Thêm tag cho commit cũ
+    $ git tag -a v0.0 a0dd8 -m "Tag for inintial commit"
+//Đẩy toàn bộ tag lên Responsitory
+    $ git push --tags
+//Nhập tag vào branch
+    $ git checkout -b version1 v1.0-an
+//Để kiểm tra tên remote
+
+//Đổi tên remote
+    $ git remote rename origin thach
+    $ git remote -v
+//Thêm một remote
+    $ git remote add tên_remote URL
+//Lấy dữ liệu từ remote mới
+    $git fetch inuit
+//Gộp vào remote cũ
+    $git merge inuit
+//Lấy về mà không cần phải dùng lệnh gộp
+    $git pull tên_remote
+//git clone
+
+Lệnh này sẽ sao chép toàn bộ dữ liệu trên repository và sao chép luôn các thiết lập về repository, tức là nó sẽ tự động tạo một master branch trên máy tính của bạn. Lệnh này chỉ nên sử dụng khi bạn cần tạo mới một Git mới trên máy tính với toàn bộ dữ liệu và thiết lập của một remote repository.
+
+//git pull
+
+Lệnh này sẽ tự động lấy toàn bộ dữ liệu từ remote repository và gộp vào cái branch hiện tại bạn đang làm việc.
+
+//git fetch
+
+Lệnh này sẽ lấy toàn bộ dữ liệu từ remote repository nhưng sẽ cho phép bạn gộp thủ công vào một branch nào đó trên thư mục Git ở máy tính.
+//
+https://www.youtube.com/watch?v=qdYWvDCMdRY
